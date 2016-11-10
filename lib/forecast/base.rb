@@ -28,8 +28,8 @@ module Forecast
 
     private
 
-    def method_missing(key)
-      key = key.to_s
+    def method_missing(name)
+      key = name.to_s
       if @attributes.key?(key.to_s)
         @attributes[key]
       else
