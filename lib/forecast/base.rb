@@ -23,7 +23,7 @@ module Forecast
     end
 
     def initialize(attributes = {})
-      @attributes = attributes
+      @attributes = HashWithIndifferentAccess.new(attributes)
     end
 
     private
