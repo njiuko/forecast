@@ -1,5 +1,4 @@
 require 'logger'
-require 'optparse'
 
 require 'rubygems'
 require 'bundler/setup'
@@ -8,9 +7,6 @@ require 'faraday'
 require 'faraday-cookie_jar'
 require 'faraday_middleware'
 require 'addressable/uri'
-require 'dotenv'
-
-Dotenv.load
 
 require_relative 'forecast/faraday_middleware/forecast'
 require_relative 'forecast/base'
@@ -45,10 +41,3 @@ module Forecast
     end
   end
 end
-
-Forecast.config do |f|
-  f.account_id = ENV['FORECAST_ACCOUNT_ID']
-  f.email      = ENV['FORECAST_EMAIL']
-  f.password   = ENV['FORECAST_PASSWORD']
-end
-
