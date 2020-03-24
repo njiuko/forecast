@@ -7,7 +7,7 @@ module Forecast
     end
 
     def self.url_name
-      self.name.demodulize.underscore.pluralize
+      name.demodulize.underscore.pluralize
     end
 
     def self.all(query = {})
