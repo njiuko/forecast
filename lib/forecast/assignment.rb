@@ -1,4 +1,5 @@
 require 'date'
+require 'bigdecimal'
 
 module Forecast
   class Assignment < Base
@@ -23,6 +24,10 @@ module Forecast
 
     def end_date
       Date.parse(@attributes[:end_date])
+    end
+
+    def hours
+      allocation.to_d / 60.minutes
     end
   end
 end
